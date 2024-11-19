@@ -1,7 +1,13 @@
-import gregHooper from "../assets/images/greg.svg";
+// Composants
 import Heading from "./Heading";
-import Picture from "./Picture";
+import Pictures from "./Pictures";
 import Description from "./Description";
+// Pictures component
+import blogImage from "../assets/images/blogImage.png";
+import gregHooper from "../assets/images/greg.svg";
+// CSS avec bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./Card.css"
 
 // Components :
 // Picture
@@ -11,15 +17,20 @@ import Description from "./Description";
 function Card() {
   return (
     <main>
-      <div className="blog-wrapper">
-        <Picture />
-        <Heading content="Learning" />
-        <div className="blog-informations"></div>
-        <p className="blog-published">Published 21 Dec 2023</p>
-        <h1 className="blog-main-title">HTML & CSS foundations</h1>
-        <Description />
+      <div className="p-3 bg-light w-50">
+        <Pictures pic1={blogImage} className="blog-image" />
+        <div className="blog-informations">
+          <Heading contentH2="Learning" className="blog-type" />
+          <p className="blog-published">Published 21 Dec 2023</p>
+          <Heading contentH1="HTML & CSS foundations" />
+          <Description
+            content="These languages are the backbone of every website, defining structure,
+      content, and presentation."
+            className="blog-description"
+          />
+        </div>
         <div className="profile">
-          <img src={gregHooper} alt="greg hooper"></img>
+          <Pictures pic2={gregHooper} className="greg-hooper" />
           <p className="profile-name">Greg Hooper</p>
         </div>
       </div>
